@@ -37,8 +37,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 
    SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
    UNICHAIN_RPC_URL=https://sepolia.unichain.org/
-   
-   SENDER_ADDRESS=<ALAMAT_PENGIRIM>
+   \nSENDER_ADDRESS=<ALAMAT_PENGIRIM>
    PRIVATE_KEY=<KUNCI_PRIVAT>
 
 4. **python3 unichain.py**
