@@ -1,4 +1,4 @@
-# Bridge antara Sepolia dan Unichain, Juga transaksi Unichain Ke Wallet Orang Laing
+# Bridge antara Sepolia dan Unichain, Juga transaksi Unichain Ke Wallet Orang Lain
 
 Proyek ini adalah skrip Python yang memungkinkan pengguna untuk melakukan transaksi antara jaringan Sepolia dan Unichain. Anda dapat melakukan bridging dari Sepolia ke Unichain dan sebaliknya, serta mengirim Unichain ke alamat wallet lain.
 
