@@ -42,18 +42,21 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 
 4. **python3 unichain.py**
 
-5. Penggunaan
+## Penggunaan
+
 Setelah menjalankan skrip, Anda akan disajikan dengan menu untuk memilih opsi yang diinginkan:
-```
-Bridge Sepolia ETH > Unichain
-Bridge Unichain > Sepolia ETH
-Kirim Ke Wallet Orang Lain
-Keluar
+
+1. **Bridge Sepolia ETH > Unichain**
+2. **Bridge Unichain > Sepolia ETH**
+3. **Kirim Ke Wallet Orang Lain**
+4. **Keluar**
+
 Ikuti petunjuk yang ada untuk melakukan transaksi yang diinginkan.
 
-```
-Dukungan
-Jika Anda memiliki pertanyaan atau butuh bantuan lebih lanjut, silakan bergabung dengan saluran Telegram kami di t.me/tahuri01.
+## Dukungan
 
-Lisensi
-Proyek ini dilisensikan di bawah MIT License
+Jika Anda memiliki pertanyaan atau butuh bantuan lebih lanjut, silakan bergabung dengan saluran Telegram kami di [t.me/tahuri01](https://t.me/tahuri01).
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
