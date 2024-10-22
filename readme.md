@@ -31,7 +31,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 
 3. **Instal paket yang diperlukan:**
 
-   ```pip install web3 python-dotenv colorama```
+   ```pip install web3 requests python-dotenv colorama```
 
 4. **nano .env**
    ```
@@ -49,7 +49,8 @@ Setelah menjalankan skrip, Anda akan disajikan dengan menu untuk memilih opsi ya
 1. **Bridge Sepolia ETH > Unichain**
 2. **Bridge Unichain > Sepolia ETH**
 3. **Kirim Ke Wallet Orang Lain**
-4. **Keluar**
+4. **Cek Total Transaksi**
+5. **Keluar**
 
 Ikuti petunjuk yang ada untuk melakukan transaksi yang diinginkan.
 
