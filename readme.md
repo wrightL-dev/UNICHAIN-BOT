@@ -25,7 +25,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 1. **Clone repository ini:**
    ```
    git clone https://github.com/wrightL-dev/UNICHAIN-BOT
-   cd bridge-eth-sepolia-unichain
+   cd UNICHAIN-BOT
 
 2. **Buat dan aktifkan virtual environment (opsional tetapi disarankan)**
    ```
@@ -35,7 +35,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 
 3. **Instal paket yang diperlukan:**
 
-   ```pip install web3 requests python-dotenv colorama```
+   ```pip install -r requirements.txt```
 
 4. **nano .env**
    ```
