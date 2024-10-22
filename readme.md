@@ -35,9 +35,9 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 
 4. **nano .env**
 
-   SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
+   ```SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
    UNICHAIN_RPC_URL=https://sepolia.unichain.org/
-   \nSENDER_ADDRESS=<ALAMAT_PENGIRIM>
+   SENDER_ADDRESS=<ALAMAT_PENGIRIM>
    PRIVATE_KEY=<KUNCI_PRIVAT>
 
 4. **python3 unichain.py**
