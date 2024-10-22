@@ -11,6 +11,8 @@ Proyek ini adalah skrip Python yang memungkinkan pengguna untuk melakukan transa
 - **Bukti Transaksi**
 - **Pengaturan jumlah transaksi dan durasi**
 
+![Fitur Bridge Sepolia dan Unichain](UNICHAIN-BOT.png)
+
 ## Persyaratan
 
 Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
