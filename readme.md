@@ -41,3 +41,18 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
    PRIVATE_KEY=<KUNCI_PRIVAT>
 
 4. **python3 unichain.py**
+
+Penggunaan
+Setelah menjalankan skrip, Anda akan disajikan dengan menu untuk memilih opsi yang diinginkan:
+
+Bridge Sepolia ETH > Unichain
+Bridge Unichain > Sepolia ETH
+Kirim Ke Wallet Orang Lain
+Keluar
+Ikuti petunjuk yang ada untuk melakukan transaksi yang diinginkan.
+
+Dukungan
+Jika Anda memiliki pertanyaan atau butuh bantuan lebih lanjut, silakan bergabung dengan saluran Telegram kami di t.me/tahuri01.
+
+Lisensi
+Proyek ini dilisensikan di bawah MIT License
