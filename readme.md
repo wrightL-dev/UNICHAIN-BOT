@@ -1,4 +1,4 @@
-# Bridge ETH antara Sepolia dan Unichain
+# Bridge antara Sepolia dan Unichain, Juga transaksi Unichain Ke Wallet Orang Laing
 
 Proyek ini adalah skrip Python yang memungkinkan pengguna untuk melakukan transaksi antara jaringan Sepolia dan Unichain. Anda dapat melakukan bridging dari Sepolia ke Unichain dan sebaliknya, serta mengirim Unichain ke alamat wallet lain.
 
@@ -27,7 +27,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 
     ```python -m venv venv
     source venv/bin/activate  # Untuk Linux/macOS
-    venv\Scripts\activate  # Untuk Windows```
+    venv\Scripts\activate  # Untuk Windows
 
 3. **Instal paket yang diperlukan:**
 
@@ -37,6 +37,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 
    SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
    UNICHAIN_RPC_URL=https://sepolia.unichain.org/
+   
    SENDER_ADDRESS=<ALAMAT_PENGIRIM>
    PRIVATE_KEY=<KUNCI_PRIVAT>
 
