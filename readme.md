@@ -7,6 +7,8 @@ Proyek ini adalah skrip Python yang memungkinkan pengguna untuk melakukan transa
 - **Bridge Sepolia ETH ke Unichain**
 - **Bridge Unichain ke Sepolia ETH**
 - **Kirim Unichain ke alamat wallet lain**
+- **Cek Total Transaksi**
+- **Bukti Transaksi**
 - **Pengaturan jumlah transaksi dan durasi**
 
 ## Persyaratan
