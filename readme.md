@@ -34,8 +34,8 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
    ```pip install web3 python-dotenv colorama```
 
 4. **nano .env**
-
-   ```SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
+   ```
+   SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
    UNICHAIN_RPC_URL=https://sepolia.unichain.org/
    SENDER_ADDRESS=<ALAMAT_PENGIRIM>
    PRIVATE_KEY=<KUNCI_PRIVAT>
