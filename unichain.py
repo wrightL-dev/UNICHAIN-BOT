@@ -16,13 +16,9 @@ web3_unichain = Web3(Web3.HTTPProvider(os.getenv("UNICHAIN_RPC_URL")))
 sender_address = os.getenv("SENDER_ADDRESS")
 private_key = os.getenv("PRIVATE_KEY")
 
-print(Fore.MAGENTA + "===============================")
-print(Fore.CYAN + "UNICHAIN TESTNET")
-print(Fore.GREEN + "BY: wrightL")
-print(Fore.YELLOW + "GITHUB: https://github.com/wrightL-dev")
-print(Fore.RED + "TELEGRAM CHANNEL: t.me/tahuri01")
-print(Fore.LIGHTYELLOW_EX + "USDT/TRX: TUSnNMKkL8RvLTWmv7pCPUFSupy6apAbvT")
-print(Fore.MAGENTA + "===============================")
+def clear_console_on_start():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -157,6 +153,14 @@ def send_eth(to_address, amount_to_send):
 
 def main():
     while True:
+        print(Fore.MAGENTA + "===============================")
+        print(Fore.CYAN + "UNICHAIN TESTNET")
+        print(Fore.GREEN + "BY: wrightL")
+        print(Fore.YELLOW + "GITHUB: https://github.com/wrightL-dev")
+        print(Fore.RED + "TELEGRAM CHANNEL: t.me/tahuri01")
+        print(Fore.LIGHTYELLOW_EX + "USDT/TRX: TUSnNMKkL8RvLTWmv7pCPUFSupy6apAbvT")
+        print(Fore.MAGENTA + "===============================")
+
         print(Fore.MAGENTA + "\n===============================")
         print(Fore.YELLOW + "\nPilih opsi:")
         print(Fore.YELLOW + "1. Bridge Sepolia ETH > Unichain")
@@ -254,4 +258,5 @@ def main():
 
 
 if __name__ == "__main__":
+    clear_console_on_start()
     main()
