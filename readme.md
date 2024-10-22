@@ -56,7 +56,7 @@ Setelah menjalankan skrip, Anda akan disajikan dengan menu untuk memilih opsi ya
 4. **Cek Total Transaksi**
 5. **Keluar**
 
-Ikuti petunjuk yang ada untuk melakukan transaksi yang diinginkan.
+Jika Anda ingin mengirim Unichain ke banyak wallet, Anda bisa mengubah isi file `wallets.txt` untuk menambahkan alamat wallet yang diinginkan. Pastikan setiap alamat wallet ditulis pada baris terpisah. Ikuti petunjuk yang ada untuk melakukan transaksi yang diinginkan.
 
 ## Dukungan
 
