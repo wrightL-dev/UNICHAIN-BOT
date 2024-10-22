@@ -19,13 +19,13 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 ## Instalasi
 
 1. **Clone repository ini:**
-
-   ```git clone https://github.com/wrightL-dev/UNICHAIN-BOT
+   ```
+   git clone https://github.com/wrightL-dev/UNICHAIN-BOT
    cd bridge-eth-sepolia-unichain
 
 2. **Buat dan aktifkan virtual environment (opsional tetapi disarankan)**
-
-    ```python -m venv venv
+   ```
+    python -m venv venv
     source venv/bin/activate  # Untuk Linux/macOS
     venv\Scripts\activate  # Untuk Windows
 
