@@ -1,6 +1,7 @@
 import os
 import time
 import random
+import requests
 from web3 import Web3
 from dotenv import load_dotenv
 from colorama import Fore, init
@@ -25,6 +26,37 @@ print(Fore.MAGENTA + "===============================")
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+# Function to fetch transaction count from Unichain
+def fetch_transaction_count():
+    url = f'https://unichain-sepolia.blockscout.com/api/v2/addresses/{sender_address}/counters'
+    
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
+        'priority': 'u=1, i',
+        'sec-ch-ua': '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'Referer': f'https://unichain-sepolia.blockscout.com/address/{sender_address}?tab=txs',
+        'Referrer-Policy': 'origin-when-cross-origin'
+    }
+
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Raise an error for bad responses
+
+        # Extract transactions_count from the response if it exists
+        data = response.json()
+        transactions_count = data.get('transactions_count', 'N/A')
+
+        print(Fore.GREEN + f'Total Transaksi: {transactions_count}')
+
+    except requests.exceptions.RequestException as e:
+        print(f'Error fetching data: {e}')
 
 def bridge_sepolia_to_unichain(amount_to_bridge):
     clear_console()
@@ -123,7 +155,6 @@ def send_eth(to_address, amount_to_send):
     except Exception as e:
         print(f'Terjadi kesalahan saat pengiriman: {e}')
 
-
 def main():
     while True:
         print(Fore.MAGENTA + "\n===============================")
@@ -131,9 +162,10 @@ def main():
         print(Fore.YELLOW + "1. Bridge Sepolia ETH > Unichain")
         print(Fore.YELLOW + "2. Bridge Unichain > Sepolia ETH")
         print(Fore.YELLOW + "3. Kirim Unichain Ke Wallet Orang Lain")
-        print(Fore.YELLOW + "4. Keluar")
+        print(Fore.YELLOW + "4. Cek Total Transaksi")
+        print(Fore.YELLOW + "5. Keluar")
 
-        choice = input("Masukkan pilihan (1/2/3/4): ")
+        choice = input("Masukkan pilihan (1/2/3/4/5): ")
 
         if choice == '1':
             amount = input("Masukkan jumlah ETH yang akan di-bridge (default 0.01): ")
@@ -210,6 +242,10 @@ def main():
                 print('Pilihan tidak valid.')
 
         elif choice == '4':
+            print("Cek Total Transaksi:")
+            fetch_transaction_count()
+
+        elif choice == '5':
             print("Keluar dari program.")
             break
 
@@ -219,4 +255,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
