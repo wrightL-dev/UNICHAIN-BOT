@@ -21,7 +21,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
 1. **Clone repository ini:**
 
    ```git clone https://github.com/wrightL-dev/UNICHAIN-BOT
-   cd bridge-eth-sepolia-unichain```
+   cd bridge-eth-sepolia-unichain
 
 2. **Buat dan aktifkan virtual environment (opsional tetapi disarankan)**
 
