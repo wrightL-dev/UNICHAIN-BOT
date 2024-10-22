@@ -1,7 +1,11 @@
+#RECODE? IZIN SAMA YANG PUNYA
+
 import os
 import time
 import random
 import requests
+import uuid
+import json
 from web3 import Web3
 from dotenv import load_dotenv
 from colorama import Fore, init
@@ -23,36 +27,66 @@ def clear_console_on_start():
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-# Function to fetch transaction count from Unichain
+def generate_uuid():
+    return str(uuid.uuid4())
+
+def generate_mixpanel_cookie_value():
+    distinct_id = generate_uuid()
+    device_id = generate_uuid().replace('-', '')
+    return {
+        "distinct_id": distinct_id,
+        "$device_id": device_id,
+        "$initial_referrer": "$direct",
+        "$initial_referring_domain": "$direct",
+        "Chain id": "1301",
+        "Environment": "Prod",
+        "Authorized": False,
+        "Viewport width": 433,
+        "Viewport height": 656,
+        "Language": "id-ID",
+        "Device type": "Browser",
+        "User id": distinct_id,
+        "$user_id": distinct_id
+    }
+
+def generate_cookies():
+    uuid_value = generate_uuid()
+    mixpanel_value = generate_mixpanel_cookie_value()
+
+    mixpanel_hash = uuid_value[:10]  
+    mixpanel_cookie_name = f"mp_{mixpanel_hash}_mixpanel"
+
+    cookie_string = (
+        f"chakra-ui-color-mode=dark; uuid={uuid_value}; chakra-ui-color-mode-hex=#101112; "
+        f"indexing_alert=false; nav_bar_collapsed=true; adblock_detected=false; "
+        f"{mixpanel_cookie_name}={requests.utils.quote(json.dumps(mixpanel_value))}"
+    )
+
+    return cookie_string
+
 def fetch_transaction_count():
-    url = f'https://unichain-sepolia.blockscout.com/api/v2/addresses/{sender_address}/counters'
-    
+    cookies = generate_cookies()
     headers = {
         'accept': '*/*',
         'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
-        'priority': 'u=1, i',
-        'sec-ch-ua': '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Linux"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'Referer': f'https://unichain-sepolia.blockscout.com/address/{sender_address}?tab=txs',
+        'cookie': cookies,
+        'Referer': 'https://unichain-sepolia.blockscout.com/address/{sender_address}?tab=txs',
         'Referrer-Policy': 'origin-when-cross-origin'
     }
-
+    url = f'https://unichain-sepolia.blockscout.com/api/v2/addresses/{sender_address}/counters'
     try:
         response = requests.get(url, headers=headers)
-        response.raise_for_status()  # Raise an error for bad responses
+        response.raise_for_status()  
 
-        # Extract transactions_count from the response if it exists
         data = response.json()
         transactions_count = data.get('transactions_count', 'N/A')
-
+        print(Fore.MAGENTA + '=====================================================================================')
+        print(Fore.GREEN + f'Versi Link: https://unichain-sepolia.blockscout.com/address/{sender_address}?tab=txs')
         print(Fore.GREEN + f'Total Transaksi: {transactions_count}')
 
     except requests.exceptions.RequestException as e:
         print(f'Error fetching data: {e}')
+
 
 def bridge_sepolia_to_unichain(amount_to_bridge):
     clear_console()
